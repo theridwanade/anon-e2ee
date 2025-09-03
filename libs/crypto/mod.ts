@@ -1,2 +1,2 @@
-import { KeyPair } from "./src/keygen.ts";
-export { KeyPair };
+import { KeyGen } from "./src/keygen.ts";
+export { KeyGen };
