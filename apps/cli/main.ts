@@ -1,7 +1,5 @@
-import {input} from "@libs/cli-utils";
+import {generateKeyPair} from "@libs/crypto";
 
-const main = async () => {
-    const a = await  input("What's your name? ");
-    console.log(`Hello, ${a}!`);
-}
-main();
+(async function main () {
+    console.log((await generateKeyPair()).privateKeyPEM);
+})();

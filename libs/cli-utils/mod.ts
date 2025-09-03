@@ -1,1 +1,1 @@
-export * from "./input.ts";
+export * from "./src/input.ts";

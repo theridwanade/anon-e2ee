@@ -3,6 +3,7 @@
     "dev:cli": "deno run --watch apps/cli/main.ts"
   },
   "imports": {
-    "@libs/cli-utils": "./libs/cli-utils/mod.ts"
+    "@libs/cli-utils": "./libs/cli-utils/mod.ts",
+    "@libs/crypto": "./libs/crypto/mod.ts"
   }
 }
