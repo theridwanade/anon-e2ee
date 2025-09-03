@@ -1,6 +1,6 @@
 import {bgBrightBlack} from "https://deno.land/std@0.224.0/fmt/colors.ts"
 import {input} from "@libs/cli-utils";
-import {encrypt, KeyGen} from "@libs/crypto";
+import {decrypt, encrypt, KeyGen} from "@libs/crypto";
 (async function main () {
     console.log(`Welcome to ${bgBrightBlack(" Anon-e2ee ")} CLI`);
     let publicCryptoKey;
@@ -27,6 +27,9 @@ import {encrypt, KeyGen} from "@libs/crypto";
             console.log("Ciphertext: ", ciphertext);
         } else if (choice === "3") {
             console.log("Decrypting...");
+            const ciphertext = await input("Enter ciphertext to decrypt: ");
+            const message = await decrypt(ciphertext, privateCryptoKey);
+            console.log("Decrypted message: ", message);
         } else if (choice === "4") {
             console.log("Exiting...");
             break;
