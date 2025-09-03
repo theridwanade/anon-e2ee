@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "dev:cli": "deno run --watch apps/cli/main.ts"
+    "dev:cli": "deno run --watch apps/cli/main.ts",
+    "dev:anon-chat": "cd ./apps/anon-chat && deno run start"
   },
   "imports": {
     "@libs/cli-utils": "./libs/cli-utils/mod.ts",
