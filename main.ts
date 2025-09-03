@@ -1,3 +1,4 @@
+import {green} from "https://deno.land/std@0.224.0/fmt/colors.ts";
 const input = async (question: string): Promise<string> => {
     await Deno.stdout.write(new TextEncoder().encode(question));
     const buf = new Uint8Array(1024);
@@ -6,9 +7,14 @@ const input = async (question: string): Promise<string> => {
 };
 
 async function main() {
-    console.log("Welcome to the Deno CLI application!");
-    const name = await input("What is your name? ");
-    console.log(`Hello, ${name}!`);
-};
+    console.log(green("Welcome to anon-e2ee-chat!"));
+    console.log("Basic Encryption/Decryption Demo");
+    console.log("Type 'exit' to quit.");
+    console.log("1. New user <Enter 1 to create a new user>");
+    const choice = await input("> ");
+    if (choice === "1") {
+        console.log("New user created!");
+    }
+}
 
 main();
