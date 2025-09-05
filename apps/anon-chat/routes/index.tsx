@@ -1,25 +1,17 @@
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
-
 export default function Home() {
-  const count = useSignal(3);
-  return (
-    <div class="px-4 py-8 mx-auto bg-[#86efac]">
-      <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-        <img
-          class="my-6"
-          src="/logo.svg"
-          width="128"
-          height="128"
-          alt="the Fresh logo: a sliced lemon dripping with juice"
-        />
-        <h1 class="text-4xl font-bold">Welcome to Fresh</h1>
-        <p class="my-4">
-          Try updating this message in the
-          <code class="mx-2">./routes/index.tsx</code> file, and refresh.
-        </p>
-        <Counter count={count} />
-      </div>
-    </div>
-  );
+    return <div className={"flex justify-center items-center h-screen"}>
+        <div>
+        <div className={"text-center mb-4 text-xl font-semibold"}>
+            Welcome to the Anon Chat App!
+        <h2>Peer-to-Peer Chat</h2>
+        </div>
+        <div>
+            <textarea id="log" cols="50" rows="10" readOnly className={"border"}></textarea><br/>
+            <div className={"border p-2 flex"}>
+            <input id="msg" type="text" placeholder="Type a message..." className={"border p-2 m-2 w-[80%]"}/>
+            <button id="send" className={"border bg-slate-900 text-white px-4 py-2 text-xl rounded-xl"}>Send</button>
+            </div>
+        </div>
+        </div>
+    </div>;
 }
