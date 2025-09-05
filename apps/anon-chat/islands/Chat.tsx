@@ -1,5 +1,11 @@
 export default function Chat() {
-
+    const socket = new WebSocket("ws://localhost:8000/ws");
+    socket.onopen = () => {
+        console.log("WebSocket connection established");
+    };
+    socket.onmessage = (e) => {
+        console.log("Message received from client", e.data);
+    }
     return  <div>
         <textarea id="log" cols="50" rows="10" readOnly className={"border"}></textarea><br/>
         <div className={"border p-2 flex"}>
