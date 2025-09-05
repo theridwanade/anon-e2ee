@@ -1,9 +1,11 @@
 {
   "tasks": {
     "dev:cli": "deno run --watch apps/cli/main.ts",
-    "dev:anon-chat": "cd ./apps/anon-chat && deno run start"
+    "dev:anon-chat": "cd ./apps/anon-chat && deno run start",
+    "dev:backend": "deno run --watch --allow-net apps/backend/main.ts"
   },
   "imports": {
+    "@hono/hono": "jsr:@hono/hono@^4.9.6",
     "@libs/cli-utils": "./libs/cli-utils/mod.ts",
     "@libs/crypto": "./libs/crypto/mod.ts"
   }

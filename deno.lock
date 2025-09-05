@@ -1,6 +1,19 @@
 {
   "version": "5",
+  "specifiers": {
+    "jsr:@hono/hono@^4.9.6": "4.9.6"
+  },
+  "jsr": {
+    "@hono/hono@4.9.6": {
+      "integrity": "b85abb0013d167a290b1808d1d4d542dee269df31d4f47122023259fdd7e184b"
+    }
+  },
   "remote": {
     "https://deno.land/std@0.224.0/fmt/colors.ts": "508563c0659dd7198ba4bbf87e97f654af3c34eb56ba790260f252ad8012e1c5"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@hono/hono@^4.9.6"
+    ]
   }
 }
