@@ -36,4 +36,4 @@ app.get("/ws", (c) => {
     return response;
 })
 
-Deno.serve(app.fetch);
+Deno.serve({ port: 8080 }, app.fetch);

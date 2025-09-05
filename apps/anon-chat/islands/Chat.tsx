@@ -1,16 +1,22 @@
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 export default function Chat() {
     const [message, setMessage] = useState("");
-    const socket = new WebSocket("ws://localhost:8000/ws");
-    socket.onopen = () => {
-        console.log("WebSocket connection established");
-    };
-    socket.onmessage = (e) => {
-        console.log("Message received from client", e.data);
-    }
+    const socketRef = useState<WebSocket | null>(null);
+    useEffect(() => {
+        const socket = new WebSocket("ws://localhost:8080/ws");
+        socketRef.current = socket;
+        socket.onopen = () => {
+            console.log("WebSocket connection established");
+        };
+        socket.onmessage = (e) => {
+            console.log(e.data);
+        }
+        return () => socket.close();
+    }, []);
+
     const sendMessage = () => {
-        socket.send(message);
+        socketRef.current?.send(message);
     }
     return  <div>
         <textarea id="log" cols="50" rows="10" readOnly className={"border"}></textarea><br/>
